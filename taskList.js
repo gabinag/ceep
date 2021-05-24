@@ -1,5 +1,7 @@
 const newTask = document.querySelector('[data-form-button]')
 
 newTask.addEventListener('click', ()=> {
-    console.log('fui clicado')
+    const input = document.querySelector('[data-form-input]')
+    const valor = input.value
+    console.log(valor)
 })
