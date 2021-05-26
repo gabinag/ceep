@@ -12,7 +12,7 @@ const createTask = (evento) => {
     const content = `<p class="content">${valor}</p>`
 
     task.innerHTML = content
-
+    checkButton.appendChild(task)
     list.appendChild(task)  //coloca task (filho) dentro de list (pai), li dentro de ul
     input.value = " " //limpa o valor do campo
 }
@@ -20,3 +20,15 @@ const createTask = (evento) => {
 const newTask = document.querySelector('[data-form-button]')
 
 newTask.addEventListener('click', createTask)
+
+const CheckButton = () => {
+    const checkButton = document.createElement('button')
+
+    checkButton.classList.add('check-button')
+    checkButton.innerText = 'concluir'
+    checkButton.addEventListener('click', ()=> {
+        console.log('fui clicado')
+    })
+
+    return checkButton
+}
