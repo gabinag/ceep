@@ -14,8 +14,9 @@
 
     task.innerHTML = content
     task.appendChild(CheckButton())
-    list.appendChild(task)  //coloca task (filho) dentro de list (pai), li dentro de ul
-    input.value = " " //limpa o valor do campo
+    task.appendChild(DeleteButton())
+    list.appendChild(task)  //coloca (filho) dentro de list (pai), li dentro de ul
+    input.value = " " 
 }
 
 const newTask = document.querySelector('[data-form-button]')
@@ -33,11 +34,31 @@ const CheckButton = () => {
     return checkButton
 }
 
-const checkTask = (event) => {
-    const checkButton = event.target
+const checkTask = (evento) => {
+    const checkButton = evento.target
 
     const completeTask = checkButton.parentElement
 
     completeTask.classList.toggle('done')
 } 
+
+const DeleteButton = () => {
+    const deleteButton = document.createElement('button')
+
+    deleteButton.innerText = 'deletar'
+    deleteButton.addEventListener('click', deleteTask)
+
+    return deleteButton
+}
+
+const deleteTask = (evento) => {
+    const deleteButton = evento.target
+
+    const completeTask = deleteButton.parentElement
+
+    completeTask.remove()
+
+    return deleteButton
+}
+
 })()
