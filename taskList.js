@@ -1,4 +1,5 @@
-const createTask = (evento) => {
+( () => {
+    const createTask = (evento) => {
     evento.preventDefault() 
 
     const input = document.querySelector('[data-form-input]')
@@ -39,3 +40,4 @@ const checkTask = (event) => {
 
     completeTask.classList.toggle('done')
 } 
+})()
